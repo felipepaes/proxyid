@@ -1,0 +1,90 @@
+[
+{
+    "model": "appmock.personintegerpk",
+    "pk": 1,
+    "fields": {
+        "first_name": "Paolo",
+        "last_name": "Maldini",
+        "age": 52,
+        "created_at": "2021-03-18T14:04:46.372Z",
+        "last_update": "2021-03-18T14:04:46.372Z"
+    }
+},
+{
+    "model": "appmock.personintegerpk",
+    "pk": 2,
+    "fields": {
+        "first_name": "Claudio",
+        "last_name": "Marchisio",
+        "age": 35,
+        "created_at": "2021-03-18T14:05:36.786Z",
+        "last_update": "2021-03-18T14:05:36.786Z"
+    }
+},
+{
+    "model": "appmock.personintegerpk",
+    "pk": 3,
+    "fields": {
+        "first_name": "Alessandro",
+        "last_name": "Del Pierro",
+        "age": 46,
+        "created_at": "2021-03-18T14:06:01.842Z",
+        "last_update": "2021-03-18T14:06:01.842Z"
+    }
+},
+{
+    "model": "appmock.personintegerpk",
+    "pk": 4,
+    "fields": {
+        "first_name": "Daniele",
+        "last_name": "De Rossi",
+        "age": 37,
+        "created_at": "2021-03-18T14:06:19.498Z",
+        "last_update": "2021-03-18T14:06:19.498Z"
+    }
+},
+{
+    "model": "appmock.personuuidpk",
+    "pk": "10482a80-b14c-4783-9d94-2e58655e87b0",
+    "fields": {
+        "first_name": "Claudio",
+        "last_name": "Marchisio",
+        "age": 35,
+        "created_at": "2021-03-18T14:06:48.474Z",
+        "last_update": "2021-03-18T14:06:48.474Z"
+    }
+},
+{
+    "model": "appmock.personuuidpk",
+    "pk": "82df2e8e-553b-4330-bd46-8299ec67a9bb",
+    "fields": {
+        "first_name": "Daniele",
+        "last_name": "De Rossi",
+        "age": 37,
+        "created_at": "2021-03-18T14:07:17.434Z",
+        "last_update": "2021-03-18T14:07:17.434Z"
+    }
+},
+{
+    "model": "appmock.personuuidpk",
+    "pk": "b8cc4c63-5251-4aa8-81f5-2b300bacb80e",
+    "fields": {
+        "first_name": "Alessandro",
+        "last_name": "Del Pierro",
+        "age": 46,
+        "created_at": "2021-03-18T14:07:02.338Z",
+        "last_update": "2021-03-18T14:07:02.338Z"
+    }
+},
+{
+    "model": "appmock.personuuidpk",
+    "pk": "d611d533-cf59-4b1e-912a-91c2e9ad4daf",
+    "fields": {
+        "first_name": "Paolo",
+        "last_name": "Maldini",
+        "age": 52,
+        "created_at": "2021-03-18T14:06:36.162Z",
+        "last_update": "2021-03-18T14:06:36.162Z"
+    }
+}
+]
