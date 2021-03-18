@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+hashids = "*"
+
+[dev-packages]
+pytest = "*"
+pytest-django = "*"
+pytest-cov = "*"
+pylint = "*"
+pycodestyle = "*"
+autopep8 = "*"
+django = "*"
+djangorestframework = "*"
+pylint-django = "*"
+pytest-pythonpath = "*"
+
+[requires]
+python_version = "3.9"
