@@ -17,6 +17,7 @@ django = "*"
 djangorestframework = "*"
 pylint-django = "*"
 pytest-pythonpath = "*"
+model-bakery = "*"
 
 [requires]
 python_version = "3.9"

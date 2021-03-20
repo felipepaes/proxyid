@@ -2,16 +2,16 @@
 
 {% block content %}
 
-<div class="h-screen flex flex-wrap lg:flex-nowrap justify-center items-center bg-gray-300 p-12">
+<div class="h-screen flex flex-col justify-center items-center bg-gray-300 p-12">
 
   <a href="{% url 'function-person-list' %}" class="font-bold text-lg text-center capitalize 
-      py-5 px-2 rounded bg-gray-600 text-white mr-6 
-      hover:bg-green-600 w-full lg:w-4/12">
+      py-5 px-2 rounded bg-gray-600 text-white mb-6 
+      hover:bg-green-600 w-full md:w-4/12">
     function based views
   </a>
   <a href="{% url 'class-person-list' %}" class="font-bold text-lg text-center capitalize 
      py-5 px-2 rounded bg-gray-600 text-white 
-     hover:bg-green-600 w-full lg:w-4/12">
+     hover:bg-green-600 w-full md:w-4/12">
     class based views
   </a>
 

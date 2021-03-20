@@ -16,7 +16,7 @@ class PersonIntegerPK(models.Model):
     def id_(self): pass
 
     def __str__(self):
-        return "{} {}".format(self.first_name, self.last_name)
+        return f"{self.first_name} {self.last_name}"
 
 
 class PersonUUIDPK(models.Model):
@@ -32,4 +32,4 @@ class PersonUUIDPK(models.Model):
     def id_(self): pass
 
     def __str__(self):
-        return "{} {}".format(self.first_name, self.last_name)
+        return f"{self.first_name} {self.last_name}"
