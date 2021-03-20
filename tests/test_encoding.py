@@ -55,3 +55,17 @@ def test_decoding_uuid_from_models_should_succeed(quantity: int) -> None:
     persons = baker.make("appmock.PersonUUIDPK", _quantity=quantity)
     for person in persons:
         assert person.pk == decode(person.id_)
+
+
+def test_encode_with_wrong_type_argument_should_fail() -> None:
+    """Tests encode with wrong type argument"""
+    with pytest.raises(ValueError):
+        x = "some random string"
+        encode(x)
+
+
+def test_decode_with_wrong_type_argument_should_fail() -> None:
+    """Tests decode with wrong type argument"""
+    with pytest.raises(ValueError):
+        x = random.randint(1, 100)
+        decode(x)

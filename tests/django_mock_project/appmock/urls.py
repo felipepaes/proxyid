@@ -24,6 +24,6 @@ urlpatterns = [
          name="class-person-int-detail"),
 
     path("class/<pk>/uuid-person/",
-         views.PersonUUIDPetailView.as_view(),
+         views.PersonUUIDDetailView.as_view(),
          name="class-person-uuid-detail"),
 ]

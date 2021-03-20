@@ -6,6 +6,7 @@ from appmock import models
 from proxyid import decode
 from proxyid.mixins import ProxyidMixin
 
+
 # ----------------- Home Page --------------------
 
 
@@ -38,6 +39,7 @@ def person_uuid_pk_detail(request, pk) -> HttpResponse:
     context = {"person": person}
     return render(request, "appmock/person_detail.html", context)
 
+
 # ---------------- Class Based Views -------------
 
 
@@ -57,7 +59,7 @@ class PersonIntegerDetailView(ProxyidMixin, generic.DetailView):
     context_object_name = "person"
 
 
-class PersonUUIDPetailView(ProxyidMixin, generic.DetailView):
+class PersonUUIDDetailView(ProxyidMixin, generic.DetailView):
     template_name = "appmock/person_detail.html"
     model = models.PersonUUIDPK
     context_object_name = "person"
