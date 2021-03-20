@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="w-10/12 mx-auto h-screen pt-8">
+
+  <div class="flex flex-col h-full">
+    {% if 'function' in request.path %}
+    <a href="{% url 'function-person-list' %}" class="text-blue-600 mb-4 hover:text-blue-300">
+      👈 go back
+    </a>
+    {% else %}
+    <a href="{% url 'class-person-list' %}" class="text-blue-600 mb-4 hover:text-blue-300">
+      👈 go back
+    </a>
+    {% endif %}
+
+    <div class="flex justify-center items-center h-full">
+
+      <div class="shadow-lg border border-gray-200 p-8 my-3 rounded-lg w-72">
+        <div class="flex flex-col  items-center">
+          <img class="border border-gray-200 rounded-full w-20 h-20 mb-2 bg-gray-200" src="https://source.unsplash.com/random/200x200" loading="lazy" alt="Profile">
+          <h1 class="font-bold text-gray-700 text-xl mb-2">{{person.first_name}} {{person.last_name}}</h1>
+          <hr class="w-14 border-2 border-gray-300 mb-2" />
+        </div>
+        <p class="text-base text-gray-500 mb-4">
+          {{person}} is {{person.age}} years old. Pellentesque ullamcorper justo ut pellentesque dictum. Fusce commodo justo mi, feugiat bibendum magna varius condimentum.
+        </p>
+
+        <hr class="border border-gray-200 mb-2" />
+
+        <footer class="">
+          <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">pk: {{person.pk}}</span>
+        </footer>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock content %}

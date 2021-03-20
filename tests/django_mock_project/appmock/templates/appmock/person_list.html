@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="w-10/12 mx-auto pt-8">
+
+  <!-- This example requires Tailwind CSS v2.0+ -->
+  <div class="flex flex-col">
+    <a href="/" class="text-blue-600 mb-4 hover:text-blue-300">👈 go back</a>
+    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Name
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Age
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  pk [<b>int</b> <span class="lowercase">or</span> <b>uuid</b>]
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  proxied pk
+                </th>
+                <th scope="col" class="relative px-6 py-3">
+                  <span class="sr-only">Link</span>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody class="bg-white divide-y divide-gray-200">
+
+              <!-- Integer Primary Key PersonIntegerPK model -->
+              {% for person in int_persons %}
+
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div class="">
+                      <div class="text-sm font-medium text-gray-900">
+                        {{person.first_name}} {{person.last_name}}
+                      </div>
+                      <div class="text-sm text-gray-500">
+                        {{person.last_name | lower | slugify }}@example.com
+                      </div>
+                    </div>
+                  </div>
+                </td>
+
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <div class="text-sm text-gray-900">{{person.age}}</div>
+                </td>
+
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                    {{person.pk}}
+                  </span>
+                </td>
+
+                <td class="px-6 py-4 whitespace-nowrap text-sm">
+                  <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                    {{person.id_}}
+                  </span>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                  <a href="{% if 'function' in request.path %}
+                            {% url 'function-person-int-detail' person.id_ %}
+                           {% else %}
+                            {% url 'class-person-int-detail' person.id_ %}
+                           {% endif %}" class="text-indigo-600 hover:text-indigo-900">Detail</a>
+                </td>
+              </tr>
+
+              {% endfor %}
+
+              <!-- UUID Primary Key PersonUUIDPK model -->
+              {% for person in uuid_persons %}
+
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div class="">
+                      <div class="text-sm font-medium text-gray-900">
+                        {{person.first_name}} {{person.last_name}}
+                      </div>
+                      <div class="text-sm text-gray-500">
+                        {{person.last_name | lower | slugify }}@example.com
+                      </div>
+                    </div>
+                  </div>
+                </td>
+
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <div class="text-sm text-gray-900">{{person.age}}</div>
+                </td>
+
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                    {{person.pk}}
+                  </span>
+                </td>
+
+                <td class="px-6 py-4 whitespace-nowrap text-sm">
+                  <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                    {{person.id_}}
+                  </span>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                  <a href="{% if 'function' in request.path %}
+                            {% url 'function-person-uuid-detail' person.id_ %}
+                           {% else %}
+                            {% url 'class-person-uuid-detail' person.id_ %}
+                           {% endif %}" class="text-indigo-600 hover:text-indigo-900">Detail</a>
+                </td>
+              </tr>
+
+              {% endfor %}
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock content %}
