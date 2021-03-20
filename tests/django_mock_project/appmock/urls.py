@@ -8,11 +8,11 @@ urlpatterns = [
 
     path("function/", views.person_list, name="function-person-list"),
 
-    path("function/<pk>/int-person",
+    path("function/<pk>/int-person/",
          views.person_int_pk_detail,
          name="function-person-int-detail"),
 
-    path("function/<pk>/uuid-person",
+    path("function/<pk>/uuid-person/",
          views.person_uuid_pk_detail,
          name="function-person-uuid-detail"),
 

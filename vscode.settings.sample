@@ -1,0 +1,53 @@
+{
+    // Python Path
+    "python.pythonPath": "",
+    "python.analysis.extraPaths": [""],
+
+    // Python Linting/Formatting
+    "python.linting.ignorePatterns": ["**/settings.py"],
+    "python.linting.pylintArgs": ["--load-plugins", "pylint_django",],
+    "python.formatting.provider": "autopep8",
+    "[python]": {"editor.formatOnSave": true},
+
+
+    // Custom File Associations [Django-Html]
+    "files.associations": {
+        "**/*.html": "html",
+        "**/templates/**/*.html": "django-html",
+        "**/templates/**/*": "django-txt",
+    },
+    "emmet.includeLanguages": {"django-html": "html"},
+    "[django-html]": {
+        "editor.tabSize": 2,
+        "editor.detectIndentation": false,
+        "editor.defaultFormatter": "HookyQR.beautify",
+        "editor.formatOnSave": true,
+    },
+    // Beautify Configuration
+    "beautify.language": {
+        "html": [
+            "html",
+            "django-html",
+        ]
+    },
+    "beautify.config": {
+        "html": {
+            "indent_size": 2,
+            "max_preserve_newlines": 1,
+            "end_with_newline": true,
+        },
+    },
+
+    // Excludes
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.pyc": true,
+        "env": true,
+        "**/__pycache__": true,
+        ".pytest_cache": true,
+    },
+}

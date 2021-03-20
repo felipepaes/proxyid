@@ -7,17 +7,7 @@ from model_bakery import baker
 
 from django.shortcuts import reverse
 
-from proxyid import encode
-from proxyid import decode
-
-
-@pytest.mark.django_db
-def test_cbv_get_object_with_mixin_should_succeed(client, mock_data):
-    encoded_pk = encode(1)
-    url = reverse("class-person-int-detail", kwargs={"pk": encoded_pk})
-    res = client.get(url)
-    print('-------------- CONTEXT[PERSON]: ', res.context["person"])
-    assert res.context["person"].id_ == encoded_pk
+from proxyid.encoding import decode
 
 
 @pytest.mark.parametrize("quantity", [20])

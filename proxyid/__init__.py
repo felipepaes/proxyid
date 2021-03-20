@@ -1,1 +1,1 @@
-from .encoding import decode, encode
+from .__version__ import version

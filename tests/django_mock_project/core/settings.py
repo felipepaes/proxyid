@@ -16,8 +16,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Add django_proxify for dev
-# TODO: should check the setuptools install dev mode for that
+# Add proxyid to python path
 ROOT_DIR = BASE_DIR.parent.parent
 sys.path.append(str(ROOT_DIR))
 

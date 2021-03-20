@@ -3,7 +3,7 @@ from django.views import generic
 
 from appmock import models
 
-from proxyid import decode
+from proxyid.encoding import decode
 from proxyid.mixins import ProxyidMixin
 
 

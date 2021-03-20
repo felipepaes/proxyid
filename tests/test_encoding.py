@@ -8,7 +8,7 @@ import random
 import pytest
 from model_bakery import baker
 
-from proxyid import decode, encode
+from proxyid.encoding import decode, encode
 from proxyid.exceptions import UnkownProxiedValueError
 
 

@@ -4,7 +4,7 @@ Tests proxyid.decorators module
 
 import pytest
 
-from proxyid import decode
+from proxyid.encoding import decode
 
 from appmock import models
 
