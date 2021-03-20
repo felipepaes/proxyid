@@ -19,6 +19,14 @@ def encode(x: Union[int, uuid.UUID]) -> str:
 
 
 def decode(x: str) -> Union[int, uuid.UUID]:
+    """
+    Decode a proxied value (str) back to it's original value (int or uuid)
+
+    If the len of decoded is equal to 1, it assumes the original value
+    was an int, if greater then 1, it was originally an hex, otherwise
+    it's  an unkown value which is wrong or was hashed with a different
+    configuration.
+    """
     if isinstance(x, str):
         decoded = hash.decode(x)
         if len(decoded) == 1:

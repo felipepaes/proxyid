@@ -5,6 +5,7 @@ from .exceptions import ProxyidConfigurationError
 
 
 def make_hashid() -> Hashids:
+    """Build a Hashid instance based on settings.py configuration"""
     try:
         config = settings.PROXYID
         salt = config.get("salt", None)
