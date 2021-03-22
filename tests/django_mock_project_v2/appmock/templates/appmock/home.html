@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="h-screen flex flex-col justify-center items-center bg-gray-300 p-12">
+
+  <header class="absolute left-0 top-0 p-12">
+    <div class="flex justify-between">
+      <div>
+        <h1 class="text-3xl font-bold text-green-600">Proxyid</h1>
+        <span class="text-lg text-gray-600">Hide your django model primary key</span>
+      </div>
+    </div>
+  </header>
+
+  <a href="{% url 'function-person-list' %}" class="font-bold text-lg text-center capitalize 
+      py-5 px-2 rounded bg-gray-600 text-white mb-6 
+      hover:bg-green-600 w-full lg:w-4/12">
+    function based views
+  </a>
+  <a href="{% url 'class-person-list' %}" class="font-bold text-lg text-center capitalize 
+     py-5 px-2 rounded bg-gray-600 text-white 
+     hover:bg-green-600 w-full lg:w-4/12">
+    class based views
+  </a>
+
+</div>
+
+{% endblock content %}
