@@ -18,6 +18,7 @@ pylint-django = "*"
 pytest-pythonpath = "*"
 model-bakery = "*"
 build = "*"
+tox = "*"
 
 [requires]
 python_version = "3.9"
