@@ -63,3 +63,18 @@ class PersonUUIDDetailView(ProxyidMixin, generic.DetailView):
     template_name = "appmock/person_detail.html"
     model = models.PersonUUIDPK
     context_object_name = "person"
+
+
+# ---------------- Class Based Views with Custom URL ARGS ---------------
+class CustomPersonIntegerDetailView(ProxyidMixin, generic.DetailView):
+    template_name = "appmock/person_detail.html"
+    model = models.PersonIntegerPK
+    context_object_name = "person"
+    proxyid_url_kwarg = "boomshakalaka"
+
+
+class CustomPersonUUIDDetailView(ProxyidMixin, generic.DetailView):
+    template_name = "appmock/person_detail.html"
+    model = models.PersonUUIDPK
+    context_object_name = "person"
+    proxyid_url_kwarg = "boomshakalaka"
