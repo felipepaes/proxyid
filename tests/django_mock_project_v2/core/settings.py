@@ -122,6 +122,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 PROXYID = {
-    "salt": "y!&t@d65m-ijjvh4!)x07ccbrvvars+k#23soe)xpzf&jms9)4",
-    "min_length": 25
+    "hashids": {
+        "salt": "y!&t@d65m-ijjvh4!)x07ccbrvvars+k#23soe)xpzf&jms9)4",
+        "min_length": 25
+    }
 }

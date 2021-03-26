@@ -2,13 +2,14 @@ import uuid
 from typing import Union
 
 from .exceptions import UnkownProxiedValueError
-from .utils import make_hashid
+from .utils.factory import make_hash
 
 
-hash = make_hashid()
+hash = make_hash()
 
 
 def encode(x: Union[int, uuid.UUID]) -> str:
+    """Encode int or uuid pk to str"""
     if isinstance(x, int):
         return hash.encode(x)
     elif isinstance(x, uuid.UUID):
