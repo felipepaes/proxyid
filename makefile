@@ -1,4 +1,4 @@
-.PHONY: build build-clean cache-clean help install mock-project-set mock-project-run mock-project-clean test test-complete
+.PHONY: build build-clean build-deploy cache-clean help install mock-project-set mock-project-run mock-project-clean mock-project-zip test test-complete
 
 
 help: ## Show this help
@@ -7,8 +7,7 @@ help: ## Show this help
 	@echo
 
 cache-clean: ## Remove .pyc and .pyo files
-	find . -name '*.pyc' -exec rm --force {} \;
-	find . -name '*.pyo' -exec rm --force {} \;
+	find . -not -path "./.tox*" \( -name "*.pyc" -o -name "*.pyo" \) -exec rm --force {} \;
 
 install: ## Install dependencies from Pipfile
 	pipenv install --dev
@@ -16,13 +15,16 @@ install: ## Install dependencies from Pipfile
 
 # commands
 
-build: ## Build python package
+build: build-clean ## Build python package
 	pipenv run python -m build
 
 build-clean: ## Remove package building generated files
 	rm --recursive --force build/
 	rm --recursive --force dist/
 	rm --recursive --force *.egg-info
+
+build-deploy: build ## Upload build to pypi
+	pipenv run python -m twine upload dist/*
 
 mock-project-set: ## Set django_mock_project database and load fixtures
 	python tests/django_mock_project/manage.py migrate
@@ -33,6 +35,9 @@ mock-project-run: mock-project-set ## Run django_mock_project
 
 mock-project-clean: ## Remove django_mock_project generated files
 	rm tests/django_mock_project/*.sqlite*
+
+mock-project-zip: ## Zips django_mock_project to django_mock_project.zip
+	cd tests; zip -r ../django_mock_project.zip django_mock_project/
 
 test: ## Run tests via Pytest
 	pipenv run pytest tests/
