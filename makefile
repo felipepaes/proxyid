@@ -1,4 +1,4 @@
-.PHONY: build build-clean build-deploy cache-clean help install mock-project-set mock-project-run mock-project-clean mock-project-zip test test-complete
+.PHONY: build build-clean build-deploy cache-clean docs-start help install mock-project-set mock-project-run mock-project-clean mock-project-zip test test-complete
 
 
 help: ## Show this help
@@ -25,6 +25,9 @@ build-clean: ## Remove package building generated files
 
 build-deploy: build ## Upload build to pypi
 	pipenv run python -m twine upload dist/*
+
+docs-start: ## Start docs development server
+	pipenv run python -m mkdocs serve
 
 mock-project-set: ## Set django_mock_project database and load fixtures
 	python tests/django_mock_project/manage.py migrate

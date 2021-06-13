@@ -1,1 +1,25 @@
-site_name: My Docs
+site_name: Proxyid
+site_description: Proxyid package documentation.
+site_author: Felipe Paes
+
+repo_url: https://github.com/felipepaes/proxyid
+edit_uri: ""
+
+theme:
+    name: mkdocs
+    highlightjs: true
+    hljs_style: tomorrow-night-blue
+
+nav:
+    - Home: index.md
+    - User Guide:
+        - User Guide: user-guide/index.md
+        - Installation: user-guide/installation.md
+        - Configuration: user-guide/configuration.md
+        - Hiding Primary Keys: user-guide/hiding-pks.md
+        - Views: user-guide/views.md
+        - Class Based Views: user-guide/class-based-views.md
+    - Tutorial: tutorial.md
+    - About: 
+        - About: about/index.md
+        - License: about/license.md

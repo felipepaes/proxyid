@@ -4,6 +4,7 @@
 
 ### Custom ###
 TODO.md
+Pipfile.lock
 
 ### Django ###
 *.log
